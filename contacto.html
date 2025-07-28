@@ -19,11 +19,11 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
-    <script type="text/javascript" src="script.js" defer></script>
   </head>
   <body>
-    <main>
-      <div class="darkModeSwitchContainer">
+    <main class="mainContacto">
+      <!-- TOGGLE DE MODO OSCURO Y CLARO -->
+      <!-- <div class="darkModeSwitchContainer">
         <div class="buttonContainer">
         <button id="modeSwitch">
           <svg
@@ -51,133 +51,183 @@
     </svg>
         </button>
         </div>
+        </div> -->
+      <div class="contactoFlexContainer">
+        <div class="tituloContactoContainer">
+          <h1 class="tituloContacto">Contacto</h1>
         </div>
-      <div class="tituloContactoContainer">
-        <h1 class="tituloContacto">Contacto</h1>
+
+        <div class="formularioContainer">
+          <!-- <div class="fondoFormulario">
+
+          <img src="/img/logo.png" id="logoContacto" />
+        </div> -->
+          <form
+            id="formularioContacto"
+            action="https://api.web3forms.com/submit"
+            method="POST"
+          >
+            <!-- Parametros de Web3Forms -->
+             <!-- Pruebas: 63cf6193-3237-42c9-8760-f1ad25b26b3b -->
+            <input
+              type="hidden"
+              name="access_key"
+              value="532f5c96-da86-4750-bb6a-8b67865ec816" 
+            />  
+            <input
+              type="hidden"
+              name="subject"
+              value="¡Alguien llenó el formulario de tu página!"
+            />
+            <input
+              type="hidden"
+              name="redirect"
+              value="http://127.0.0.1:5500/emailEnviado.html"
+            />
+            <input
+              type="hidden"
+              name="from_name"
+              value="Nueva solicitud de contacto"
+            />
+
+            <label for="inputNombre" class="labelFormulario"
+              >Nombre<b>*</b></label
+            >
+            <input type="text" id="inputNombre" name="Nombre: " required />
+            <label for="inputApellido" class="labelFormulario"
+              >Apellido<b>*</b></label
+            >
+            <input type="text" id="inputApellido" name="Apellido: " required />
+            <label for="inputEdad" class="labelFormulario">Edad<b>*</b></label>
+            <input
+              type="number"
+              min="16"
+              max="80"
+              id="inputEdad"
+              placeholder="16"
+              required
+              name="Edad: "
+            />
+            <label for="inputAltura" class="labelFormulario"
+              >¿Cuál es tu altura?</label
+            >
+            <input
+              type="text"
+              id="inputAltura"
+              placeholder="1.73"
+              name="Altura: "
+            />
+            <label for="inputPeso" class="labelFormulario"
+              >¿Cuál es tu peso?</label
+            >
+            <input
+              type="text"
+              id="inputPeso"
+              placeholder="70 kg"
+              name="Peso: "
+            />
+
+            <label for="inputDatos" class="labelFormulario"
+              >Email o celular para contactarte <b>*</b></label
+            >
+            <input type="text" id="inputDatos" name="Contacto: " required />
+
+            <label
+              for="inputExperiencia"
+              class="labelFormulario tituloFormulario"
+              >¿Tienes experiencia entrenando?<b>*</b></label
+            >
+
+            <label for="inputSi" class="labelFormularioRadio">Si</label>
+            <input
+              type="radio"
+              name="Experiencia: "
+              id="inputSi"
+              class="inputExperienciaRadio"
+              checked
+              value="Si"
+            />
+
+            <label for="inputNo" class="labelFormularioRadio">No</label>
+            <input
+              type="radio"
+              name="Experiencia: "
+              id="inputNo"
+              class="inputExperienciaRadio"
+              value="No"
+            />
+
+            <label for="inputObjetivo" class="labelFormulario tituloFormulario"
+              >¿Cuál es tu objetivo? <b>*</b></label
+            >
+
+            <label for="inputFuerza" class="labelFormularioCheck"
+              >Ganar fuerza </label
+            ><input
+              type="checkbox"
+              name="Objetivo: "
+              class="inputExperienciaCheck"
+              id="inputFuerza"
+              value="Aumentar fuerza"
+              checked
+            />
+
+            <label for="inputMusculatura" class="labelFormularioCheck"
+              >Ganar musculatura
+            </label>
+            <input
+              type="checkbox"
+              name="Objetivo: "
+              class="inputExperienciaCheck"
+              id="inputMusculatura"
+              value="Aumentar musculatura"
+            />
+
+            <label for="inputBajarPeso" class="labelFormularioCheck"
+              >Bajar peso </label
+            ><input
+              type="checkbox"
+              name="Objetivo: "
+              class="inputExperienciaCheck"
+              id="inputBajarPeso"
+              value="Bajar peso"
+            />
+
+            <label for="inputOtro" class="labelFormularioCheck">Otro</label>
+            <input
+              type="checkbox"
+              name="Objetivo: "
+              class="inputExperienciaCheck"
+              id="inputOtro"
+              value="Otro"
+            />
+
+            <input
+              type="submit"
+              id="inputBotonConsulta"
+              class="botonTarjeta"
+              value="ENVIAR"
+            />
+          </form>
+        </div>
+        <div>
+          <p class="parrafoEmail">
+            <br>Si lo prefieres, puedes contactarme a través de cualquiera de mis
+            redes sociales. <br>También puedes escribirme directamente al
+            <b class="boldPlanes">095 483 137</b>.
+          </p>
+        </div>
+        <section id="menuContacto">
+          <div class="navbar">
+            <ul id="listaGeneral">
+              <li><a href="/index.html" id="planes">Inicio</a></li>
+              <!-- <li><a href="/alumnos.html" id="alumnos">Alumnos</a></li> -->
+              <li><a href="/planes.html" id="planes">Planes</a></li>
+              <li><a href="/quienSoy.html" id="quienSoy">Quién soy</a></li>
+            </ul>
+          </div>
+        </section>
       </div>
-
-      <div class="formularioContainer">
-        <form id="formularioContacto">
-          <label for="inputNombre" class="labelFormulario"
-            >NOMBRE <b>*</b></label
-          >
-          <input
-            type="text"
-            id="inputNombre"
-            
-            required
-          />
-          <label for="inputApellido" class="labelFormulario"
-            >APELLIDO <b>*</b></label
-          >
-          <input
-            type="text"
-            id="inputApellido"
-            
-            required
-          />
-          <label for="inputEdad" class="labelFormulario">EDAD <b>*</b></label>
-          <input
-            type="number"
-            min="16"
-            max="80"
-            id="inputEdad"
-            placeholder="16"
-            required
-          />
-          <label for="inputAltura" class="labelFormulario"
-            >¿Cuál es tu altura?</label
-          >
-          <input type="text" id="inputAltura" placeholder="1.73 metros" />
-          <label for="inputPeso" class="labelFormulario"
-            >¿Cuál es tu peso?</label
-          >
-          <input type="text" id="inputPeso" placeholder="70 kg" />
-          <label for="inputExperiencia" class="labelFormulario"
-            >¿Tienes experiencia entrenando?<b>*</b></label
-          >
-        
-          <label for="inputSi" class="labelFormularioRadio">Si</label>
-          <input
-          type="radio"
-          name="exp"
-          id="inputSi"
-          class="inputExperienciaRadio"
-          checked
-          value="Si"
-        />
-        
-      
-          <label for="inputNo" class="labelFormularioRadio">No</label>
-          <input
-          type="radio"
-          name="exp"
-          id="inputNo"
-          class="inputExperienciaRadio"
-          value="No"
-        />
-       
-
-          <label for="inputObjetivo" class="labelFormulario"
-            >¿Cuál es tu objetivo? <b>*</b></label
-          >
-         
-          <label for="inputFuerza" class="labelFormularioCheck"
-            >Aumentar fuerza </label><input
-            type="checkbox"
-            name="objetivo"
-            class="inputExperienciaCheck"
-            id="inputFuerza"
-            required
-            value="Aumentar fuerza"
-            checked
-          />
-       
-          <label for="inputMusculatura" class="labelFormularioCheck"
-            >Aumentar musculatura </label>  <input
-            type="checkbox"
-            name="objetivo"
-            class="inputExperienciaCheck"
-            id="inputMusculatura"
-            value="Aumentar musculatura"
-          />
-         
-          <label for="inputBajarPeso" class="labelFormularioCheck">Bajar peso </label><input
-          type="checkbox"
-          name="objetivo"
-          class="inputExperienciaCheck"
-          id="inputBajarPeso"
-          value="Bajar peso"
-        />
-        
-          <label for="inputOtro" class="labelFormularioCheck">Otro</label>   <input
-          type="checkbox"
-          name="objetivo"
-          class="inputExperienciaCheck"
-          id="inputOtro"
-          value="Otro"
-        />
-       
-
-          <input type="submit" id="inputBotonConsulta" class="botonTarjeta" value="ENVIAR" />
-        </form>
-      </div>
-
-      <section id="menuPlanes">
-        <div class="navbar">
-         <ul id="listaGeneral">
-           <li><a href="/index.html" id="planes">Inicio</a></li>
-           <li><a href="/alumnos.html" id="alumnos">Alumnos</a></li>
-           <li><a href="/planes.html" id="planes">Planes</a></li>
-           <li><a href="/quienSoy.html" id="quienSoy">Quién soy</a></li>
-               </ul>
-          
-             
-             
-         </div>
-         
-         </section>
-         </div>
     </main>
   </body>
 </html>
